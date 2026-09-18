@@ -41,12 +41,12 @@ SELECT
     c.total_credit_lines,
     c.age_group,
     
-    Оконная функция 1: Средний доход по возрастной группе
+    --Оконная функция 1: Средний доход по возрастной группе
     AVG(c.monthly_income) OVER (
         PARTITION BY c.age_group
     ) AS avg_income_by_age_group,
 
-    Оконная функция 2: Среднее использование кредита по числу иждивенцев
+    --Оконная функция 2: Среднее использование кредита по числу иждивенцев
     AVG(c.credit_utilization) OVER (
         PARTITION BY c.dependents
     ) AS avg_utilization_by_dependents
